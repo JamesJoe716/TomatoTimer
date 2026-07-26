@@ -34,8 +34,12 @@ only on error-severity violations; two `file_length` warnings are known, expecte
 on `PomodoroTimerViewModel.swift` and its test file, and should disappear when that view
 model is finally split up.
 
-`.github/workflows/ci.yml` runs the same sequence on push/PR once this directory is a
-git repo with a GitHub remote.
+`.github/workflows/ci.yml` runs the same sequence on push/PR at
+https://github.com/JamesJoe716/TomatoTimer.
+
+When `CI` is set, `Scripts/ci.sh` switches to ad-hoc code signing, because hosted
+runners have no certificate for team `W882AG982U`. Local runs are unaffected and keep
+the real signing identity — do not remove that env guard.
 
 Underlying build command, if you need it directly:
 

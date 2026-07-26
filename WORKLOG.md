@@ -950,3 +950,34 @@ workflow uses `macos-latest` with the runner's default Xcode (no hardcoded
   was staged, and grepped the tree for credentials/keys before committing — clean.
 - The two avatar PNGs (1.6 MB + 1.2 MB) are committed as normal assets; no LFS.
 - Working tree clean, **no remote configured and nothing pushed.**
+
+### 2026-07-26 (pass 13 — GitHub remote + CI actually running)
+
+- Created public repo `JamesJoe716/TomatoTimer` and pushed `main`.
+  - First push was rejected: the `gh` OAuth token lacked the `workflow` scope, so it
+    could not create `.github/workflows/ci.yml`, and the whole push was refused.
+    User ran `gh auth refresh -h github.com -s workflow`; push then succeeded.
+- **CI run 1 failed** (exit 65): `No signing certificate "Mac Development" found` for
+  team `W882AG982U`. Hosted runners have no such certificate.
+  - Fix: `Scripts/ci.sh` switches to ad-hoc signing (`CODE_SIGN_IDENTITY="-"`,
+    `CODE_SIGNING_REQUIRED=NO`, empty team/profile) **only when `CI` is set**.
+    Chose ad-hoc over `CODE_SIGNING_ALLOWED=NO` because the test stage needs a binary
+    that actually launches on Apple Silicon.
+  - Verified locally with `CI=1`: `codesign -dv` reports `Signature=adhoc`,
+    `TeamIdentifier=not set`; the ordinary local build still reports team
+    `W882AG982U`. The env guard works in both directions.
+  - Also bumped `actions/checkout` v4 → v5 (v4 targets deprecated Node.js 20).
+- **CI run 2 passed**, but the test stage produced no evidence it had run: `-quiet`
+  suppresses the `Executed N tests` summary, so a silently-skipped suite would look
+  exactly like a passing one.
+  - Fix: the test stage no longer uses `-quiet`. It captures the log, prints the
+    summary on success, dumps failures + log tail on error, and **fails explicitly if
+    the summary is missing or reports 0 tests**. Builds stay `-quiet`.
+  - Guard logic exercised against synthetic logs covering 41-tests, 0-tests,
+    no-summary, and the singular `1 test` form.
+- **CI run 3 passed with proof**: runner log now contains
+  `Executed 41 tests, with 0 failures (0 unexpected)`. Job time 2m8s.
+- Note: an earlier `gh run watch ... | tail` reported a bogus `EXIT: 0` because `$?`
+  captured `tail`'s status, not `gh`'s. Later runs take the exit status directly.
+
+Repo: https://github.com/JamesJoe716/TomatoTimer (public, 4 commits, CI green)

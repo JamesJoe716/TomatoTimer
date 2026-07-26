@@ -36,6 +36,8 @@
 		1A0000010000000000000921 /* FocusSpeechCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */; };
 		1A0000010000000000000923 /* LiveActivitySnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000925 /* LiveActivitySnapshotTests.swift */; };
 		1A0000010000000000000924 /* LiveActivitySnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000925 /* LiveActivitySnapshotTests.swift */; };
+		1A0000010000000000000926 /* TimerSnapshotPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000928 /* TimerSnapshotPresentationTests.swift */; };
+		1A0000010000000000000927 /* TimerSnapshotPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000928 /* TimerSnapshotPresentationTests.swift */; };
 		1A000001000000000000001F /* PomodoroTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */; };
 		1A0000010000000000000020 /* PomodoroTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */; };
 		1A0000010000000000000021 /* AudioResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011B /* AudioResourceTests.swift */; };
@@ -214,6 +216,7 @@
 		1A0000010000000000000117 /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSpeechCoordinatorTests.swift; sourceTree = "<group>"; };
 		1A0000010000000000000925 /* LiveActivitySnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivitySnapshotTests.swift; sourceTree = "<group>"; };
+		1A0000010000000000000928 /* TimerSnapshotPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSnapshotPresentationTests.swift; sourceTree = "<group>"; };
 		1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerViewModelTests.swift; sourceTree = "<group>"; };
 		1A0000010000000000000119 /* TomatoTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TomatoTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A000001000000000000011A /* TomatoTimer-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TomatoTimer-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -449,6 +452,7 @@
 			children = (
 				1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */,
 				1A0000010000000000000925 /* LiveActivitySnapshotTests.swift */,
+				1A0000010000000000000928 /* TimerSnapshotPresentationTests.swift */,
 				1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */,
 				1A000001000000000000011B /* AudioResourceTests.swift */,
 			);
@@ -801,6 +805,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000926 /* TimerSnapshotPresentationTests.swift in Sources */,
 				1A0000010000000000000923 /* LiveActivitySnapshotTests.swift in Sources */,
 				1A0000010000000000000920 /* FocusSpeechCoordinatorTests.swift in Sources */,
 				1A000001000000000000001F /* PomodoroTimerViewModelTests.swift in Sources */,
@@ -812,6 +817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000927 /* TimerSnapshotPresentationTests.swift in Sources */,
 				1A0000010000000000000924 /* LiveActivitySnapshotTests.swift in Sources */,
 				1A0000010000000000000921 /* FocusSpeechCoordinatorTests.swift in Sources */,
 				1A0000010000000000000020 /* PomodoroTimerViewModelTests.swift in Sources */,

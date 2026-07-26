@@ -185,45 +185,12 @@ final class PomodoroTimerViewModel: ObservableObject {
 
     /// Snapshot fed to the Live Activity. `nil` while idle (no activity shown).
     var liveActivitySnapshot: LiveActivitySnapshot? {
-        let snapshot = currentSnapshot
-        switch snapshot.state {
-        case .idle:
-            return nil
-        case .running:
-            guard let endDate else { return nil }
-            let total = TimeInterval(snapshot.sessionTotalSeconds)
-            return LiveActivitySnapshot(
-                phase: "专注中",
-                isBreak: false,
-                isPaused: false,
-                startDate: endDate.addingTimeInterval(-total),
-                endDate: endDate,
-                remainingSeconds: Int(snapshot.remainingSeconds)
-            )
-        case .paused:
-            let remaining = snapshot.remainingSeconds
-            let now = Date.now
-            let elapsed = max(0, TimeInterval(snapshot.sessionTotalSeconds) - remaining)
-            return LiveActivitySnapshot(
-                phase: "已暂停",
-                isBreak: false,
-                isPaused: true,
-                startDate: now.addingTimeInterval(-elapsed),
-                endDate: now.addingTimeInterval(remaining),
-                remainingSeconds: Int(remaining)
-            )
-        case .breaking:
-            guard let breakEndDate else { return nil }
-            let total = snapshot.breakTotalSeconds
-            return LiveActivitySnapshot(
-                phase: "休息中",
-                isBreak: true,
-                isPaused: false,
-                startDate: breakEndDate.addingTimeInterval(-total),
-                endDate: breakEndDate,
-                remainingSeconds: Int(snapshot.breakRemainingSeconds)
-            )
-        }
+        LiveActivitySnapshot.make(
+            snapshot: currentSnapshot,
+            endDate: endDate,
+            breakEndDate: breakEndDate,
+            now: Date.now
+        )
     }
 
     func clearSystemNotice() {

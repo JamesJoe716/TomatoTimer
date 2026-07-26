@@ -80,6 +80,10 @@
 		1A000001000000000000004C /* SpeechNotifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000130 /* SpeechNotifying.swift */; };
 		1A000001000000000000004D /* PomodoroTimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000131 /* PomodoroTimerState.swift */; };
 		1A000001000000000000004E /* PomodoroTimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000131 /* PomodoroTimerState.swift */; };
+		1A0000010000000000000900 /* TimerRestoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000902 /* TimerRestoration.swift */; };
+		1A0000010000000000000901 /* TimerRestoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000902 /* TimerRestoration.swift */; };
+		1A0000010000000000000903 /* LiveActivitySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000905 /* LiveActivitySnapshot.swift */; };
+		1A0000010000000000000904 /* LiveActivitySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000905 /* LiveActivitySnapshot.swift */; };
 		1A000001000000000000004F /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
 		1A0000010000000000000050 /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
 		1A0000010000000000000051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000133 /* AppDelegate.swift */; };
@@ -222,6 +226,8 @@
 		1A000001000000000000012F /* VoiceGenderDidChangeNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceGenderDidChangeNotification.swift; sourceTree = "<group>"; };
 		1A0000010000000000000130 /* SpeechNotifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNotifying.swift; sourceTree = "<group>"; };
 		1A0000010000000000000131 /* PomodoroTimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerState.swift; sourceTree = "<group>"; };
+		1A0000010000000000000902 /* TimerRestoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRestoration.swift; sourceTree = "<group>"; };
+		1A0000010000000000000905 /* LiveActivitySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivitySnapshot.swift; sourceTree = "<group>"; };
 		1A0000010000000000000132 /* TimerSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSnapshot.swift; sourceTree = "<group>"; };
 		1A0000010000000000000133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A0000010000000000000134 /* AppWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowPresenter.swift; sourceTree = "<group>"; };
@@ -361,6 +367,8 @@
 				1A0000010000000000000130 /* SpeechNotifying.swift */,
 				1A0000010000000000000103 /* PomodoroTimerViewModel.swift */,
 				1A0000010000000000000131 /* PomodoroTimerState.swift */,
+				1A0000010000000000000902 /* TimerRestoration.swift */,
+				1A0000010000000000000905 /* LiveActivitySnapshot.swift */,
 				1A0000010000000000000132 /* TimerSnapshot.swift */,
 				1A0000010000000000000104 /* DisplaySleepAssertion.swift */,
 				1A0000010000000000000105 /* SpeechNotifier.swift */,
@@ -633,6 +641,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000903 /* LiveActivitySnapshot.swift in Sources */,
+				1A0000010000000000000900 /* TimerRestoration.swift in Sources */,
 				1A0000010000000000000001 /* TomatoTimerApp.swift in Sources */,
 				1A0000010000000000000051 /* AppDelegate.swift in Sources */,
 				1A0000010000000000000052 /* AppWindowPresenter.swift in Sources */,
@@ -695,6 +705,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000904 /* LiveActivitySnapshot.swift in Sources */,
+				1A0000010000000000000901 /* TimerRestoration.swift in Sources */,
 				1A0000010000000000000014 /* TomatoTimeriOSApp.swift in Sources */,
 				1A0000010000000000000015 /* ContentView.swift in Sources */,
 				1A0000010000000000000030 /* AdaptiveLayoutMetrics.swift in Sources */,

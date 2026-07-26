@@ -981,3 +981,64 @@ workflow uses `macos-latest` with the runner's default Xcode (no hardcoded
   captured `tail`'s status, not `gh`'s. Later runs take the exit status directly.
 
 Repo: https://github.com/JamesJoe716/TomatoTimer (public, 4 commits, CI green)
+
+### 2026-07-26 (pass 14 — splitting PomodoroTimerViewModel)
+
+Done on branch `refactor/split-view-model`. Six extractions, each verified with the
+full gate (`Scripts/ci.sh`) before the next.
+
+| Extraction | New file(s) | VM lines |
+|---|---|---|
+| Value types | `TimerRestoration.swift`, `LiveActivitySnapshot.swift` | 1101 → 1054 |
+| Derived presentation | `TimerSnapshot+Presentation.swift`, `TimerClockFormatter.swift` | 1054 → 941 |
+| Persistence | `TimerPreferences.swift` | 941 → 890 |
+| Progress speech | `FocusSpeechCoordinator.swift` | 890 → 804 |
+| Live Activity payload | (onto `LiveActivitySnapshot`) | 804 → **771** |
+
+Notes on the design choices:
+
+- Presentation moved onto `TimerSnapshot` rather than into a view-model extension in
+  another file. Swift `private` is file-scoped, so an extension elsewhere would have
+  forced widening access purely to satisfy a line count. Moving it to the value type
+  avoids that and makes it testable without constructing a timer.
+- `TimerPreferences` keeps every defaults key string and clamping range unchanged, so
+  existing stored settings still load. `SettingsView` now reads its `@AppStorage` keys
+  from there instead of from the view model.
+- `FocusSpeechCoordinator` was moved **verbatim** — verified by diffing the extracted
+  methods against `git show e8a0963:` with only comments/whitespace normalised; the
+  sole difference is the signature (session total is now a parameter).
+- `LiveActivitySnapshot.make` takes `now`, so the paused case (which synthesises a
+  window around the present) is assertable.
+
+Test coverage grew where the refactor exposed gaps:
+
+- `FocusSpeechCoordinatorTests` (13) — the progress-speech state machine had **no**
+  direct coverage before; the three existing speech tests only cover stop/sleep
+  interaction. Covers thresholds, re-arming on rewind, milestone de-duplication,
+  encouragement rotation.
+- `LiveActivitySnapshotTests` (7) — all four states, both missing-end-date paths, the
+  elapsed clamp.
+- `TimerSnapshotPresentationTests` (19) — capabilities per state, ceil-rounding,
+  break-mode formatting, progress clamping and zero-total guards, break wordings.
+
+**41 → 80 tests, 0 failures.** macOS + iOS Release both build.
+
+Tooling: `TomatoTimer.xcodeproj` lists every file explicitly (no
+`PBXFileSystemSynchronizedRootGroup`), so each new file needed five pbxproj entries
+across two app targets (and two more for test targets). Scripted it; `plutil -lint`
+after every edit caught that a `+` in a filename must be quoted in pbxproj.
+
+**Still over the lint threshold:** the view model is 771 lines against a 600 warning.
+What remains is the state machine (start/pause/resume/reset/finish/finishBreak) plus
+its side-effect wiring — ticking, notification scheduling, screen-sleep handling,
+snapshot publishing. Splitting further would mean breaking up the state machine
+itself or widening `private` access across files, which would make the code worse to
+read, not better. Left as-is rather than chasing the number; the threshold is worth
+revisiting deliberately instead.
+
+**Not verified:** no clean screenshot of the running app this pass — the desktop had
+several overlapping windows and another app kept taking the foreground, so I stopped
+moving windows rather than interfere. The app was confirmed launching and rendering
+(header, status, ring, presets, steppers, adjustment buttons and the stats row all
+visible), but not photographed cleanly. The substantive evidence is the 80 tests, the
+verbatim-move diff, and both Release builds.

@@ -177,92 +177,21 @@ final class PomodoroTimerViewModel: ObservableObject {
         currentSnapshot.state
     }
 
-    var canEditDuration: Bool {
-        currentSnapshot.state == .idle
-    }
-
-    var canStart: Bool {
-        canEditDuration && currentSnapshot.selectedTotalSeconds > 0
-    }
-
-    var canAdjustCountdown: Bool {
-        currentSnapshot.state == .running || currentSnapshot.state == .paused
-    }
-
-    var canSkipBreak: Bool {
-        currentSnapshot.state == .breaking
-    }
-
-    var selectedPresetMinutes: Int? {
-        currentSnapshot.selectedPresetMinutes
-    }
-
-    var selectedHours: Int {
-        currentSnapshot.selectedTotalSeconds / 3600
-    }
-
-    var selectedMinutesComponent: Int {
-        (currentSnapshot.selectedTotalSeconds % 3600) / 60
-    }
-
-    var selectedSecondsComponent: Int {
-        currentSnapshot.selectedTotalSeconds % 60
-    }
-
-    var selectedDurationText: String {
-        if currentSnapshot.state == .breaking {
-            return "休息 \(formatDuration(seconds: currentSnapshot.breakTotalSeconds))"
-        }
-
-        return formatDuration(seconds: TimeInterval(currentSnapshot.selectedTotalSeconds))
-    }
-
-    var progress: Double {
-        let snapshot = currentSnapshot
-        if snapshot.state == .breaking {
-            guard snapshot.breakTotalSeconds > 0 else { return 0 }
-            return min(1, max(0, 1 - snapshot.breakRemainingSeconds / snapshot.breakTotalSeconds))
-        }
-
-        guard snapshot.sessionTotalSeconds > 0 else { return 0 }
-        return min(1, max(0, 1 - snapshot.remainingSeconds / snapshot.sessionTotalSeconds))
-    }
-
-    var remainingTimeText: String {
-        let snapshot = currentSnapshot
-        if snapshot.state == .breaking {
-            return formatClock(seconds: snapshot.breakRemainingSeconds, showsHours: false)
-        }
-
-        let shouldShowHours = snapshot.selectedTotalSeconds >= 3600 || snapshot.remainingSeconds >= 3600
-        return formatClock(seconds: snapshot.remainingSeconds, showsHours: shouldShowHours)
-    }
-
-    var statusText: String {
-        switch currentSnapshot.state {
-        case .idle:
-            return "未开始"
-        case .running:
-            return "进行中"
-        case .paused:
-            return "已暂停"
-        case .breaking:
-            return "休息中"
-        }
-    }
-
-    var statusColor: Color {
-        switch currentSnapshot.state {
-        case .idle:
-            return .secondary
-        case .running:
-            return .green
-        case .paused:
-            return .orange
-        case .breaking:
-            return .blue
-        }
-    }
+    // Derived presentation lives on TimerSnapshot; these forward the pending-aware
+    // snapshot so the UI sees in-flight duration edits immediately.
+    var canEditDuration: Bool { currentSnapshot.canEditDuration }
+    var canStart: Bool { currentSnapshot.canStart }
+    var canAdjustCountdown: Bool { currentSnapshot.canAdjustCountdown }
+    var canSkipBreak: Bool { currentSnapshot.canSkipBreak }
+    var selectedPresetMinutes: Int? { currentSnapshot.selectedPresetMinutes }
+    var selectedHours: Int { currentSnapshot.selectedHours }
+    var selectedMinutesComponent: Int { currentSnapshot.selectedMinutesComponent }
+    var selectedSecondsComponent: Int { currentSnapshot.selectedSecondsComponent }
+    var selectedDurationText: String { currentSnapshot.selectedDurationText }
+    var progress: Double { currentSnapshot.progress }
+    var remainingTimeText: String { currentSnapshot.remainingTimeText }
+    var statusText: String { currentSnapshot.statusText }
+    var statusColor: Color { currentSnapshot.statusColor }
 
     /// Absolute end instant of the active phase, or `nil` when idle/paused.
     /// Used purely as a cheap change signal to re-sync the Live Activity.
@@ -908,19 +837,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         }
     }
 
-    /// Localized "已休息…,该继续了" message derived from the *active* break length
-    /// (so long breaks read correctly). The 5-minute case keeps the exact wording of
-    /// the bundled voice clip; other lengths fall back to synthesized speech.
-    private var breakFinishedMessage: String {
-        let totalSeconds = Int(currentSnapshot.breakTotalSeconds.rounded())
-        if totalSeconds == 5 * 60 {
-            return "已休息五分钟,该继续了"
-        }
-        let minutes = totalSeconds / 60
-        let seconds = totalSeconds % 60
-        let phrase = seconds == 0 ? "\(minutes)分钟" : "\(minutes)分\(seconds)秒"
-        return "已休息\(phrase),该继续了"
-    }
+    private var breakFinishedMessage: String { currentSnapshot.breakFinishedMessage }
 
     // MARK: - Cycle & auto-start (opt-in; all default to the original behavior)
 
@@ -1008,36 +925,6 @@ final class PomodoroTimerViewModel: ObservableObject {
         snapshot.selectedPresetMinutes = preset
         snapshot.remainingSeconds = duration
         snapshot.sessionTotalSeconds = duration
-    }
-
-    private func formatClock(seconds: TimeInterval, showsHours: Bool) -> String {
-        let totalSeconds = max(0, Int(ceil(seconds)))
-        let hours = totalSeconds / 3600
-        let minutes = (totalSeconds % 3600) / 60
-        let seconds = totalSeconds % 60
-
-        if showsHours {
-            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        }
-
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-
-    private func formatDuration(seconds: TimeInterval) -> String {
-        let totalSeconds = max(0, Int(seconds))
-        let hours = totalSeconds / 3600
-        let minutes = (totalSeconds % 3600) / 60
-        let seconds = totalSeconds % 60
-
-        if hours > 0 {
-            return String(format: "%d小时 %02d分 %02d秒", hours, minutes, seconds)
-        }
-
-        if minutes > 0 {
-            return String(format: "%d分 %02d秒", minutes, seconds)
-        }
-
-        return "\(seconds)秒"
     }
 
     isolated deinit {

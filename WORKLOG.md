@@ -940,3 +940,13 @@ violations, so these do not block the gate.
 git repository and has no remote, so GitHub Actions could not be exercised. The
 workflow uses `macos-latest` with the runner's default Xcode (no hardcoded
 `Xcode_*.app` path, since those names vary by runner image); local Xcode is 26.6.
+
+### 2026-07-26 (pass 12 — git repository)
+
+- `git init -b main`; single initial commit `5f0af75`, 162 files tracked (4.8 MB).
+  Branch is `main` to match `.github/workflows/ci.yml`.
+- Extended `.gitignore` with `.claude/settings.local.json` and `.codex/` (local-only
+  agent config). Confirmed nothing from `build/` (824 MB), `DerivedData/`, or `.omo/`
+  was staged, and grepped the tree for credentials/keys before committing — clean.
+- The two avatar PNGs (1.6 MB + 1.2 MB) are committed as normal assets; no LFS.
+- Working tree clean, **no remote configured and nothing pushed.**

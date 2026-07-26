@@ -21,12 +21,9 @@ final class PomodoroTimerViewModel: ObservableObject {
     private var currentTickInterval: TimeInterval?
     private var breakSessionID = 0
     private var pendingScreenSleepRequest: ScreenSleepRequest?
-    private var hasSpokenReminder = false
-    private var hasSpokenFinalMinute = false
-    private var spokenProgressMilestones: Set<Int> = []
-    private var progressEncouragementIndex = 0
     private var isDisplaySleepAssertionActive = false
     private let speechNotifier: SpeechNotifying
+    private let focusSpeech: FocusSpeechCoordinator
     private let sleepAssertion: DisplaySleepControlling
     private let screenSleeper: ScreenSleepControlling
     private let notificationScheduler: TimerNotificationControlling
@@ -38,20 +35,8 @@ final class PomodoroTimerViewModel: ObservableObject {
     #endif
 
     private var breakTotalSeconds: TimeInterval = 5 * 60
-    private let progressSpeechMinimumDuration: TimeInterval = 10 * 60
-    private let progressMilestoneInterval = 5 * 60
     private let foregroundTickInterval: TimeInterval = 0.25
     private let backgroundTickInterval: TimeInterval = 1.0
-    private let progressEncouragements = [
-        "太厉害啦,这个节奏世界首富稳了",
-        "好棒好棒,首富宝座在向你招手哦",
-        "专注的你最有魅力,继续冲呀未来首富",
-        "稳住稳住,离世界首富又近一步啦",
-        "哇你也太能扛了,亿万身家等着你呢",
-        "再加把劲,未来首富我可看好你哦",
-        "你已经超神啦,首富不是你还能是谁",
-        "继续保持,小钱钱正在向你飞来呀"
-    ]
     private let notificationCenter: NotificationCenter
     private let preferences: TimerPreferences
 
@@ -68,6 +53,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         self.notificationCenter = notificationCenter
         self.preferences = TimerPreferences(defaults: userDefaults)
         self.speechNotifier = speechNotifier
+        self.focusSpeech = FocusSpeechCoordinator(speechNotifier: speechNotifier)
         self.sleepAssertion = sleepAssertion
         self.screenSleeper = screenSleeper
         self.notificationScheduler = notificationScheduler
@@ -280,7 +266,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         speechNotifier.stop()
         clearSystemNotice()
         notificationScheduler.prepareForTimerUse()
-        resetWorkSpeechState()
+        focusSpeech.reset()
 
         let selectedTotal = TimeInterval(snapshot.selectedTotalSeconds)
         publish {
@@ -342,7 +328,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         notificationScheduler.cancelPendingTimerNotifications()
         endDate = nil
         breakEndDate = nil
-        resetWorkSpeechState()
+        focusSpeech.reset()
 
         let selectedTotal = TimeInterval(snapshot.selectedTotalSeconds)
         publish {
@@ -400,7 +386,7 @@ final class PomodoroTimerViewModel: ObservableObject {
             scheduleRunningTimerNotifications()
         }
 
-        updateSpeechState(for: adjustedRemaining)
+        focusSpeech.update(remaining: adjustedRemaining, sessionTotalSeconds: snapshot.sessionTotalSeconds)
         saveRestorationState()
     }
 
@@ -503,7 +489,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         }
 
         publish { $0.remainingSeconds = remaining }
-        updateSpeechState(for: remaining)
+        focusSpeech.update(remaining: remaining, sessionTotalSeconds: snapshot.sessionTotalSeconds)
         return false
     }
 
@@ -521,75 +507,6 @@ final class PomodoroTimerViewModel: ObservableObject {
 
         publish { $0.breakRemainingSeconds = remaining }
         return false
-    }
-
-    private func updateSpeechState(for remaining: TimeInterval) {
-        if remaining > 10 {
-            hasSpokenReminder = false
-        }
-
-        if remaining <= 5 && !hasSpokenReminder {
-            hasSpokenReminder = true
-            speechNotifier.speakRestReminder()
-            return
-        }
-
-        let total = snapshot.sessionTotalSeconds
-        guard total >= progressSpeechMinimumDuration else { return }
-
-        if remaining > 70 {
-            hasSpokenFinalMinute = false
-        }
-
-        let elapsed = max(0, total - remaining)
-        rearmProgressMilestones(elapsed: elapsed)
-
-        if remaining <= 60 && remaining > 5 && !hasSpokenFinalMinute {
-            hasSpokenFinalMinute = true
-            speechNotifier.speak("还有最后一分钟")
-            return
-        }
-
-        guard remaining > 75 else { return }
-        speakProgressMilestoneIfNeeded(elapsed: elapsed, total: total)
-    }
-
-    private func rearmProgressMilestones(elapsed: TimeInterval) {
-        spokenProgressMilestones = spokenProgressMilestones.filter { milestone in
-            elapsed > TimeInterval(milestone - 5)
-        }
-    }
-
-    private func speakProgressMilestoneIfNeeded(elapsed: TimeInterval, total: TimeInterval) {
-        let latestMilestone = Int(elapsed / TimeInterval(progressMilestoneInterval)) * progressMilestoneInterval
-        guard latestMilestone >= progressMilestoneInterval else { return }
-
-        let maxMilestone = min(latestMilestone, Int(total) - 1)
-        let crossedMilestones = stride(
-            from: progressMilestoneInterval,
-            through: maxMilestone,
-            by: progressMilestoneInterval
-        ).filter { milestone in
-            TimeInterval(milestone) < total && !spokenProgressMilestones.contains(milestone)
-        }
-
-        guard let milestoneToSpeak = crossedMilestones.max() else { return }
-        spokenProgressMilestones.formUnion(crossedMilestones)
-        speechNotifier.speak("你努力了\(milestoneToSpeak / 60)分钟")
-        speechNotifier.speak(nextProgressEncouragement())
-    }
-
-    private func resetWorkSpeechState() {
-        hasSpokenReminder = false
-        hasSpokenFinalMinute = false
-        spokenProgressMilestones.removeAll()
-        progressEncouragementIndex = 0
-    }
-
-    private func nextProgressEncouragement() -> String {
-        let encouragement = progressEncouragements[progressEncouragementIndex % progressEncouragements.count]
-        progressEncouragementIndex += 1
-        return encouragement
     }
 
     private func beginBreakActivity() {
@@ -714,10 +631,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         }
         scheduleBreakFinishedNotification()
 
-        if !hasSpokenReminder {
-            hasSpokenReminder = true
-            speechNotifier.speakRestReminder()
-        }
+        focusSpeech.announceRestReminderIfNeeded()
 
         speechNotifier.runAfterCurrentSpeech { [weak self] in
             guard let self, self.snapshot.state == .breaking, self.breakSessionID == sessionID else { return }

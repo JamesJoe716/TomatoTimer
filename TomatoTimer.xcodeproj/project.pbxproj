@@ -32,6 +32,8 @@
 		1A000001000000000000001C /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000113 /* Audio */; };
 		1A000001000000000000001D /* Avatars in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000114 /* Avatars */; };
 		1A000001000000000000001E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000109 /* AVFoundation.framework */; };
+		1A0000010000000000000920 /* FocusSpeechCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */; };
+		1A0000010000000000000921 /* FocusSpeechCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */; };
 		1A000001000000000000001F /* PomodoroTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */; };
 		1A0000010000000000000020 /* PomodoroTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */; };
 		1A0000010000000000000021 /* AudioResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011B /* AudioResourceTests.swift */; };
@@ -90,6 +92,8 @@
 		1A000001000000000000090A /* TimerSnapshot+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090B /* TimerSnapshot+Presentation.swift */; };
 		1A000001000000000000090C /* TimerPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090E /* TimerPreferences.swift */; };
 		1A000001000000000000090D /* TimerPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090E /* TimerPreferences.swift */; };
+		1A000001000000000000090F /* FocusSpeechCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000911 /* FocusSpeechCoordinator.swift */; };
+		1A0000010000000000000910 /* FocusSpeechCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000911 /* FocusSpeechCoordinator.swift */; };
 		1A000001000000000000004F /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
 		1A0000010000000000000050 /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
 		1A0000010000000000000051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000133 /* AppDelegate.swift */; };
@@ -206,6 +210,7 @@
 		1A0000010000000000000115 /* AppActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityMonitor.swift; sourceTree = "<group>"; };
 		1A0000010000000000000116 /* TomatoTimeriOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoTimeriOSApp.swift; sourceTree = "<group>"; };
 		1A0000010000000000000117 /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSpeechCoordinatorTests.swift; sourceTree = "<group>"; };
 		1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerViewModelTests.swift; sourceTree = "<group>"; };
 		1A0000010000000000000119 /* TomatoTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TomatoTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A000001000000000000011A /* TomatoTimer-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TomatoTimer-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +242,7 @@
 		1A0000010000000000000908 /* TimerClockFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerClockFormatter.swift; sourceTree = "<group>"; };
 		1A000001000000000000090B /* TimerSnapshot+Presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerSnapshot+Presentation.swift"; sourceTree = "<group>"; };
 		1A000001000000000000090E /* TimerPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferences.swift; sourceTree = "<group>"; };
+		1A0000010000000000000911 /* FocusSpeechCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSpeechCoordinator.swift; sourceTree = "<group>"; };
 		1A0000010000000000000132 /* TimerSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSnapshot.swift; sourceTree = "<group>"; };
 		1A0000010000000000000133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A0000010000000000000134 /* AppWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowPresenter.swift; sourceTree = "<group>"; };
@@ -381,6 +387,7 @@
 				1A0000010000000000000908 /* TimerClockFormatter.swift */,
 				1A000001000000000000090B /* TimerSnapshot+Presentation.swift */,
 				1A000001000000000000090E /* TimerPreferences.swift */,
+				1A0000010000000000000911 /* FocusSpeechCoordinator.swift */,
 				1A0000010000000000000132 /* TimerSnapshot.swift */,
 				1A0000010000000000000104 /* DisplaySleepAssertion.swift */,
 				1A0000010000000000000105 /* SpeechNotifier.swift */,
@@ -437,6 +444,7 @@
 		1A0000010000000000000305 /* TomatoTimerTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A0000010000000000000922 /* FocusSpeechCoordinatorTests.swift */,
 				1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */,
 				1A000001000000000000011B /* AudioResourceTests.swift */,
 			);
@@ -653,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A000001000000000000090F /* FocusSpeechCoordinator.swift in Sources */,
 				1A000001000000000000090C /* TimerPreferences.swift in Sources */,
 				1A0000010000000000000909 /* TimerSnapshot+Presentation.swift in Sources */,
 				1A0000010000000000000906 /* TimerClockFormatter.swift in Sources */,
@@ -720,6 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000910 /* FocusSpeechCoordinator.swift in Sources */,
 				1A000001000000000000090D /* TimerPreferences.swift in Sources */,
 				1A000001000000000000090A /* TimerSnapshot+Presentation.swift in Sources */,
 				1A0000010000000000000907 /* TimerClockFormatter.swift in Sources */,
@@ -787,6 +797,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000920 /* FocusSpeechCoordinatorTests.swift in Sources */,
 				1A000001000000000000001F /* PomodoroTimerViewModelTests.swift in Sources */,
 				1A0000010000000000000021 /* AudioResourceTests.swift in Sources */,
 			);
@@ -796,6 +807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0000010000000000000921 /* FocusSpeechCoordinatorTests.swift in Sources */,
 				1A0000010000000000000020 /* PomodoroTimerViewModelTests.swift in Sources */,
 				1A0000010000000000000022 /* AudioResourceTests.swift in Sources */,
 			);

@@ -1,0 +1,18 @@
+.DS_Store
+.omo/
+DerivedData/
+build/
+*.xcarchive
+*.xcresult
+*.dSYM
+*.ipa
+*.pkg
+*.dmg
+ExportOptions.plist
+xcuserdata/
+*.xcuserstate
+
+# Local-only agent/tool config
+.claude/settings.local.json
+.codex/
+

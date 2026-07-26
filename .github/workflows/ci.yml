@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Lint, build, test
+    # Uses the runner image's default Xcode. If a specific version is needed,
+    # pin it here with maxim-lobanov/setup-xcode rather than an absolute path —
+    # the Xcode_*.app names differ between runner images.
+    runs-on: macos-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
+      - name: SwiftLint
+        run: Scripts/lint.sh
+
+      - name: Build macOS (Release)
+        run: Scripts/ci.sh macos
+
+      - name: Build iOS (Release)
+        run: Scripts/ci.sh ios
+
+      - name: Test (macOS, Debug)
+        run: Scripts/ci.sh test

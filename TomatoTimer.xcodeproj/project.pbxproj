@@ -1,0 +1,1292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12531ABE04EDA4CEB6FA33BD /* PomodoroActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8C1830110114E41792B134 /* PomodoroActivityAttributes.swift */; };
+		14D7AC091C33B5F0E073095D /* TomatoTimerWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33466B55D29D0ABD3C2DF3 /* TomatoTimerWidgetBundle.swift */; };
+		1A0000010000000000000001 /* TomatoTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000101 /* TomatoTimerApp.swift */; };
+		1A0000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000102 /* ContentView.swift */; };
+		1A0000010000000000000003 /* PomodoroTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000103 /* PomodoroTimerViewModel.swift */; };
+		1A0000010000000000000004 /* DisplaySleepAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000104 /* DisplaySleepAssertion.swift */; };
+		1A0000010000000000000005 /* SpeechNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000105 /* SpeechNotifier.swift */; };
+		1A0000010000000000000006 /* ScreenSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000106 /* ScreenSleeper.swift */; };
+		1A0000010000000000000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000107 /* Assets.xcassets */; };
+		1A0000010000000000000009 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000109 /* AVFoundation.framework */; };
+		1A0000010000000000000010 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000110 /* IOKit.framework */; };
+		1A0000010000000000000011 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000113 /* Audio */; };
+		1A0000010000000000000012 /* Avatars in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000114 /* Avatars */; };
+		1A0000010000000000000013 /* AppActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000115 /* AppActivityMonitor.swift */; };
+		1A0000010000000000000014 /* TomatoTimeriOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000116 /* TomatoTimeriOSApp.swift */; };
+		1A0000010000000000000015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000102 /* ContentView.swift */; };
+		1A0000010000000000000016 /* PomodoroTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000103 /* PomodoroTimerViewModel.swift */; };
+		1A0000010000000000000017 /* DisplaySleepAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000104 /* DisplaySleepAssertion.swift */; };
+		1A0000010000000000000018 /* SpeechNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000105 /* SpeechNotifier.swift */; };
+		1A0000010000000000000019 /* ScreenSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000106 /* ScreenSleeper.swift */; };
+		1A000001000000000000001A /* AppActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000115 /* AppActivityMonitor.swift */; };
+		1A000001000000000000001B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000107 /* Assets.xcassets */; };
+		1A000001000000000000001C /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000113 /* Audio */; };
+		1A000001000000000000001D /* Avatars in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000114 /* Avatars */; };
+		1A000001000000000000001E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000109 /* AVFoundation.framework */; };
+		1A000001000000000000001F /* PomodoroTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */; };
+		1A0000010000000000000020 /* PomodoroTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */; };
+		1A0000010000000000000021 /* AudioResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011B /* AudioResourceTests.swift */; };
+		1A0000010000000000000022 /* AudioResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011B /* AudioResourceTests.swift */; };
+		1A0000010000000000000023 /* TimerFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011C /* TimerFaceView.swift */; };
+		1A0000010000000000000024 /* TimerFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011C /* TimerFaceView.swift */; };
+		1A0000010000000000000025 /* DigitalAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011D /* DigitalAvatarView.swift */; };
+		1A0000010000000000000026 /* DigitalAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011D /* DigitalAvatarView.swift */; };
+		1A0000010000000000000027 /* TimerColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011E /* TimerColumnView.swift */; };
+		1A0000010000000000000028 /* TimerColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011E /* TimerColumnView.swift */; };
+		1A0000010000000000000029 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011F /* PrivacyInfo.xcprivacy */; };
+		1A000001000000000000002A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000011F /* PrivacyInfo.xcprivacy */; };
+		1A000001000000000000002B /* TimerNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000120 /* TimerNotificationScheduler.swift */; };
+		1A000001000000000000002C /* TimerNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000120 /* TimerNotificationScheduler.swift */; };
+		1A000001000000000000002D /* AvatarSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000121 /* AvatarSpeechController.swift */; };
+		1A000001000000000000002E /* AvatarSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000121 /* AvatarSpeechController.swift */; };
+		1A000001000000000000002F /* AdaptiveLayoutMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000122 /* AdaptiveLayoutMetrics.swift */; };
+		1A0000010000000000000030 /* AdaptiveLayoutMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000122 /* AdaptiveLayoutMetrics.swift */; };
+		1A0000010000000000000031 /* TimerFaceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000123 /* TimerFaceFrame.swift */; };
+		1A0000010000000000000032 /* TimerFaceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000123 /* TimerFaceFrame.swift */; };
+		1A0000010000000000000033 /* TimerProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000124 /* TimerProgressRing.swift */; };
+		1A0000010000000000000034 /* TimerProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000124 /* TimerProgressRing.swift */; };
+		1A0000010000000000000035 /* TimerFaceLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000125 /* TimerFaceLabels.swift */; };
+		1A0000010000000000000036 /* TimerFaceLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000125 /* TimerFaceLabels.swift */; };
+		1A0000010000000000000037 /* FloatingLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000126 /* FloatingLight.swift */; };
+		1A0000010000000000000038 /* FloatingLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000126 /* FloatingLight.swift */; };
+		1A0000010000000000000039 /* FloatingLightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000127 /* FloatingLightsView.swift */; };
+		1A000001000000000000003A /* FloatingLightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000127 /* FloatingLightsView.swift */; };
+		1A000001000000000000003B /* DigitalAvatarPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000128 /* DigitalAvatarPresentation.swift */; };
+		1A000001000000000000003C /* DigitalAvatarPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000128 /* DigitalAvatarPresentation.swift */; };
+		1A000001000000000000003D /* DigitalAvatarFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000129 /* DigitalAvatarFrame.swift */; };
+		1A000001000000000000003E /* DigitalAvatarFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000129 /* DigitalAvatarFrame.swift */; };
+		1A000001000000000000003F /* DigitalAvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012A /* DigitalAvatarImage.swift */; };
+		1A0000010000000000000040 /* DigitalAvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012A /* DigitalAvatarImage.swift */; };
+		1A0000010000000000000041 /* PlatformAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012B /* PlatformAvatarImageView.swift */; };
+		1A0000010000000000000042 /* PlatformAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012B /* PlatformAvatarImageView.swift */; };
+		1A0000010000000000000043 /* VoiceGender+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012C /* VoiceGender+Avatar.swift */; };
+		1A0000010000000000000044 /* VoiceGender+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012C /* VoiceGender+Avatar.swift */; };
+		1A0000010000000000000045 /* AvatarImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012D /* AvatarImageLoader.swift */; };
+		1A0000010000000000000046 /* AvatarImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012D /* AvatarImageLoader.swift */; };
+		1A0000010000000000000047 /* VoiceGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012E /* VoiceGender.swift */; };
+		1A0000010000000000000048 /* VoiceGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012E /* VoiceGender.swift */; };
+		1A0000010000000000000049 /* VoiceGenderDidChangeNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012F /* VoiceGenderDidChangeNotification.swift */; };
+		1A000001000000000000004A /* VoiceGenderDidChangeNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000012F /* VoiceGenderDidChangeNotification.swift */; };
+		1A000001000000000000004B /* SpeechNotifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000130 /* SpeechNotifying.swift */; };
+		1A000001000000000000004C /* SpeechNotifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000130 /* SpeechNotifying.swift */; };
+		1A000001000000000000004D /* PomodoroTimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000131 /* PomodoroTimerState.swift */; };
+		1A000001000000000000004E /* PomodoroTimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000131 /* PomodoroTimerState.swift */; };
+		1A000001000000000000004F /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
+		1A0000010000000000000050 /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
+		1A0000010000000000000051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000133 /* AppDelegate.swift */; };
+		1A0000010000000000000052 /* AppWindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000134 /* AppWindowPresenter.swift */; };
+		1A0000010000000000000053 /* ScreenSleepOutcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000135 /* ScreenSleepOutcome.swift */; };
+		1A0000010000000000000054 /* ScreenSleepOutcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000135 /* ScreenSleepOutcome.swift */; };
+		1A0000010000000000000055 /* ScreenSleepRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000136 /* ScreenSleepRequest.swift */; };
+		1A0000010000000000000056 /* ScreenSleepRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000136 /* ScreenSleepRequest.swift */; };
+		1A0000010000000000000057 /* ScreenSleepControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000137 /* ScreenSleepControlling.swift */; };
+		1A0000010000000000000058 /* ScreenSleepControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000137 /* ScreenSleepControlling.swift */; };
+		1A0000010000000000000059 /* SystemScreenSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000138 /* SystemScreenSleeper.swift */; };
+		1A000001000000000000005A /* SystemScreenSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000138 /* SystemScreenSleeper.swift */; };
+		1A000001000000000000005B /* ProcessScreenSleepRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000139 /* ProcessScreenSleepRequest.swift */; };
+		1A000001000000000000005C /* ProcessScreenSleepRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000139 /* ProcessScreenSleepRequest.swift */; };
+		1A000001000000000000005D /* CompletedScreenSleepRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013A /* CompletedScreenSleepRequest.swift */; };
+		1A000001000000000000005E /* CompletedScreenSleepRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013A /* CompletedScreenSleepRequest.swift */; };
+		1A000001000000000000005F /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013B /* TimerHeaderView.swift */; };
+		1A0000010000000000000060 /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013B /* TimerHeaderView.swift */; };
+		1A0000010000000000000061 /* DurationUnitFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013C /* DurationUnitFormatter.swift */; };
+		1A0000010000000000000062 /* DurationUnitFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013C /* DurationUnitFormatter.swift */; };
+		1A0000010000000000000063 /* StepperIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013D /* StepperIconButton.swift */; };
+		1A0000010000000000000064 /* StepperIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013D /* StepperIconButton.swift */; };
+		1A0000010000000000000065 /* DurationStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013E /* DurationStepperView.swift */; };
+		1A0000010000000000000066 /* DurationStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013E /* DurationStepperView.swift */; };
+		1A0000010000000000000067 /* CompactDurationStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013F /* CompactDurationStepperView.swift */; };
+		1A0000010000000000000068 /* CompactDurationStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000013F /* CompactDurationStepperView.swift */; };
+		1A0000010000000000000069 /* PresetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000140 /* PresetPickerView.swift */; };
+		1A000001000000000000006A /* PresetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000140 /* PresetPickerView.swift */; };
+		1A000001000000000000006B /* DurationSteppersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000141 /* DurationSteppersView.swift */; };
+		1A000001000000000000006C /* DurationSteppersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000141 /* DurationSteppersView.swift */; };
+		1A000001000000000000006D /* TimerVoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000142 /* TimerVoicePicker.swift */; };
+		1A000001000000000000006E /* TimerVoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000142 /* TimerVoicePicker.swift */; };
+		1A000001000000000000006F /* TimerDurationEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000143 /* TimerDurationEditorView.swift */; };
+		1A0000010000000000000070 /* TimerDurationEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000143 /* TimerDurationEditorView.swift */; };
+		1A0000010000000000000071 /* TimerAdjustmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000144 /* TimerAdjustmentButton.swift */; };
+		1A0000010000000000000072 /* TimerAdjustmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000144 /* TimerAdjustmentButton.swift */; };
+		1A0000010000000000000073 /* CountdownAdjustmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000145 /* CountdownAdjustmentsView.swift */; };
+		1A0000010000000000000074 /* CountdownAdjustmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000145 /* CountdownAdjustmentsView.swift */; };
+		1A0000010000000000000075 /* TimerActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000146 /* TimerActionButton.swift */; };
+		1A0000010000000000000076 /* TimerActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000146 /* TimerActionButton.swift */; };
+		1A0000010000000000000077 /* TimerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000147 /* TimerActionsView.swift */; };
+		1A0000010000000000000078 /* TimerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000147 /* TimerActionsView.swift */; };
+		1A0000010000000000000079 /* AvatarSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000148 /* AvatarSectionView.swift */; };
+		1A000001000000000000007A /* AvatarSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000148 /* AvatarSectionView.swift */; };
+		1A000001000000000000007B /* DigitalAvatarFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000149 /* DigitalAvatarFaceView.swift */; };
+		1A000001000000000000007C /* DigitalAvatarFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000149 /* DigitalAvatarFaceView.swift */; };
+		1A000001000000000000007D /* DigitalAvatarGlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000014A /* DigitalAvatarGlowView.swift */; };
+		1A000001000000000000007E /* DigitalAvatarGlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000014A /* DigitalAvatarGlowView.swift */; };
+		48B677B1F3F3AD2EB9972771 /* PomodoroLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552B10D32C8EA7A83B3A1A /* PomodoroLiveActivity.swift */; };
+		4A331609BC1500F72B51332B /* PomodoroActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8C1830110114E41792B134 /* PomodoroActivityAttributes.swift */; };
+		6ADB28C13086A49ED2342690 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430E007C8079475089606824 /* Foundation.framework */; };
+		6D35FAD13C0C92004ABC76BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC46B36D496F3F25BC4D55C /* SettingsView.swift */; };
+		88D3374AEDEB8F8035AB3B93 /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20187FA84CB1E64FA7D03DB7 /* LiveActivityController.swift */; };
+		97427A1A206C8B77426A3613 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC46B36D496F3F25BC4D55C /* SettingsView.swift */; };
+		C28E82CF611196FF8D3CE7EA /* TimerPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FD2128FAF38DC927FFD719 /* TimerPalette.swift */; };
+		C6174C22EA5F2EB3D0F26712 /* TomatoTimerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1D23DE2935F4B5F6A2C924CA /* TomatoTimerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE94889E9E0F7453D0B08AA5 /* TimerPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FD2128FAF38DC927FFD719 /* TimerPalette.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A0000010000000000000700 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A0000010000000000000401 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A0000010000000000000400;
+			remoteInfo = TomatoTimer;
+		};
+		1A0000010000000000000702 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A0000010000000000000401 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A0000010000000000000402;
+			remoteInfo = "TomatoTimer-iOS";
+		};
+		E56A83895B051EECC8262848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A0000010000000000000401 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83D30ECCCBA6ED4B6268454E;
+			remoteInfo = TomatoTimerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F368A99417F3682ADD8F26CC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C6174C22EA5F2EB3D0F26712 /* TomatoTimerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A0000010000000000000100 /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0000010000000000000101 /* TomatoTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoTimerApp.swift; sourceTree = "<group>"; };
+		1A0000010000000000000102 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000103 /* PomodoroTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerViewModel.swift; sourceTree = "<group>"; };
+		1A0000010000000000000104 /* DisplaySleepAssertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySleepAssertion.swift; sourceTree = "<group>"; };
+		1A0000010000000000000105 /* SpeechNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNotifier.swift; sourceTree = "<group>"; };
+		1A0000010000000000000106 /* ScreenSleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSleeper.swift; sourceTree = "<group>"; };
+		1A0000010000000000000107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A0000010000000000000108 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A0000010000000000000109 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1A0000010000000000000110 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		1A0000010000000000000111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0000010000000000000112 /* TomatoTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TomatoTimer.entitlements; sourceTree = "<group>"; };
+		1A0000010000000000000113 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
+		1A0000010000000000000114 /* Avatars */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Avatars; sourceTree = "<group>"; };
+		1A0000010000000000000115 /* AppActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityMonitor.swift; sourceTree = "<group>"; };
+		1A0000010000000000000116 /* TomatoTimeriOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoTimeriOSApp.swift; sourceTree = "<group>"; };
+		1A0000010000000000000117 /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerViewModelTests.swift; sourceTree = "<group>"; };
+		1A0000010000000000000119 /* TomatoTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TomatoTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A000001000000000000011A /* TomatoTimer-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TomatoTimer-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A000001000000000000011B /* AudioResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioResourceTests.swift; sourceTree = "<group>"; };
+		1A000001000000000000011C /* TimerFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFaceView.swift; sourceTree = "<group>"; };
+		1A000001000000000000011D /* DigitalAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalAvatarView.swift; sourceTree = "<group>"; };
+		1A000001000000000000011E /* TimerColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerColumnView.swift; sourceTree = "<group>"; };
+		1A000001000000000000011F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1A0000010000000000000120 /* TimerNotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationScheduler.swift; sourceTree = "<group>"; };
+		1A0000010000000000000121 /* AvatarSpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSpeechController.swift; sourceTree = "<group>"; };
+		1A0000010000000000000122 /* AdaptiveLayoutMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLayoutMetrics.swift; sourceTree = "<group>"; };
+		1A0000010000000000000123 /* TimerFaceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFaceFrame.swift; sourceTree = "<group>"; };
+		1A0000010000000000000124 /* TimerProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProgressRing.swift; sourceTree = "<group>"; };
+		1A0000010000000000000125 /* TimerFaceLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFaceLabels.swift; sourceTree = "<group>"; };
+		1A0000010000000000000126 /* FloatingLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLight.swift; sourceTree = "<group>"; };
+		1A0000010000000000000127 /* FloatingLightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLightsView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000128 /* DigitalAvatarPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalAvatarPresentation.swift; sourceTree = "<group>"; };
+		1A0000010000000000000129 /* DigitalAvatarFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalAvatarFrame.swift; sourceTree = "<group>"; };
+		1A000001000000000000012A /* DigitalAvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalAvatarImage.swift; sourceTree = "<group>"; };
+		1A000001000000000000012B /* PlatformAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAvatarImageView.swift; sourceTree = "<group>"; };
+		1A000001000000000000012C /* VoiceGender+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceGender+Avatar.swift"; sourceTree = "<group>"; };
+		1A000001000000000000012D /* AvatarImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageLoader.swift; sourceTree = "<group>"; };
+		1A000001000000000000012E /* VoiceGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceGender.swift; sourceTree = "<group>"; };
+		1A000001000000000000012F /* VoiceGenderDidChangeNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceGenderDidChangeNotification.swift; sourceTree = "<group>"; };
+		1A0000010000000000000130 /* SpeechNotifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNotifying.swift; sourceTree = "<group>"; };
+		1A0000010000000000000131 /* PomodoroTimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerState.swift; sourceTree = "<group>"; };
+		1A0000010000000000000132 /* TimerSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSnapshot.swift; sourceTree = "<group>"; };
+		1A0000010000000000000133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1A0000010000000000000134 /* AppWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowPresenter.swift; sourceTree = "<group>"; };
+		1A0000010000000000000135 /* ScreenSleepOutcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSleepOutcome.swift; sourceTree = "<group>"; };
+		1A0000010000000000000136 /* ScreenSleepRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSleepRequest.swift; sourceTree = "<group>"; };
+		1A0000010000000000000137 /* ScreenSleepControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSleepControlling.swift; sourceTree = "<group>"; };
+		1A0000010000000000000138 /* SystemScreenSleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemScreenSleeper.swift; sourceTree = "<group>"; };
+		1A0000010000000000000139 /* ProcessScreenSleepRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessScreenSleepRequest.swift; sourceTree = "<group>"; };
+		1A000001000000000000013A /* CompletedScreenSleepRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedScreenSleepRequest.swift; sourceTree = "<group>"; };
+		1A000001000000000000013B /* TimerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHeaderView.swift; sourceTree = "<group>"; };
+		1A000001000000000000013C /* DurationUnitFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationUnitFormatter.swift; sourceTree = "<group>"; };
+		1A000001000000000000013D /* StepperIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperIconButton.swift; sourceTree = "<group>"; };
+		1A000001000000000000013E /* DurationStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationStepperView.swift; sourceTree = "<group>"; };
+		1A000001000000000000013F /* CompactDurationStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactDurationStepperView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000140 /* PresetPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetPickerView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000141 /* DurationSteppersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSteppersView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000142 /* TimerVoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVoicePicker.swift; sourceTree = "<group>"; };
+		1A0000010000000000000143 /* TimerDurationEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDurationEditorView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000144 /* TimerAdjustmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAdjustmentButton.swift; sourceTree = "<group>"; };
+		1A0000010000000000000145 /* CountdownAdjustmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownAdjustmentsView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000146 /* TimerActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerActionButton.swift; sourceTree = "<group>"; };
+		1A0000010000000000000147 /* TimerActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerActionsView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000148 /* AvatarSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSectionView.swift; sourceTree = "<group>"; };
+		1A0000010000000000000149 /* DigitalAvatarFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalAvatarFaceView.swift; sourceTree = "<group>"; };
+		1A000001000000000000014A /* DigitalAvatarGlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalAvatarGlowView.swift; sourceTree = "<group>"; };
+		1D23DE2935F4B5F6A2C924CA /* TomatoTimerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TomatoTimerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		20187FA84CB1E64FA7D03DB7 /* LiveActivityController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiveActivityController.swift; path = TomatoTimer/LiveActivityController.swift; sourceTree = "<group>"; };
+		2EC46B36D496F3F25BC4D55C /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = TomatoTimer/SettingsView.swift; sourceTree = "<group>"; };
+		40552B10D32C8EA7A83B3A1A /* PomodoroLiveActivity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PomodoroLiveActivity.swift; sourceTree = "<group>"; };
+		42FD2128FAF38DC927FFD719 /* TimerPalette.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimerPalette.swift; path = TomatoTimer/TimerPalette.swift; sourceTree = "<group>"; };
+		430E007C8079475089606824 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4A33466B55D29D0ABD3C2DF3 /* TomatoTimerWidgetBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TomatoTimerWidgetBundle.swift; sourceTree = "<group>"; };
+		BF8C1830110114E41792B134 /* PomodoroActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PomodoroActivityAttributes.swift; path = TomatoTimer/PomodoroActivityAttributes.swift; sourceTree = "<group>"; };
+		DFA6A2E7A23CAC6EB5465C7F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		168876CE07077D84C92C9067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ADB28C13086A49ED2342690 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000200 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0000010000000000000009 /* AVFoundation.framework in Frameworks */,
+				1A0000010000000000000010 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A000001000000000000001E /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000209 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A0000010000000000000300 = {
+			isa = PBXGroup;
+			children = (
+				1A0000010000000000000301 /* TomatoTimer */,
+				1A0000010000000000000305 /* TomatoTimerTests */,
+				1A0000010000000000000302 /* Frameworks */,
+				1A0000010000000000000303 /* Products */,
+				BF8C1830110114E41792B134 /* PomodoroActivityAttributes.swift */,
+				20187FA84CB1E64FA7D03DB7 /* LiveActivityController.swift */,
+				65F5CD61E06BA338EBED017E /* TomatoTimerWidget */,
+				42FD2128FAF38DC927FFD719 /* TimerPalette.swift */,
+				2EC46B36D496F3F25BC4D55C /* SettingsView.swift */,
+			);
+			sourceTree = "<group>";
+		};
+		1A0000010000000000000301 /* TomatoTimer */ = {
+			isa = PBXGroup;
+			children = (
+				1A0000010000000000000101 /* TomatoTimerApp.swift */,
+				1A0000010000000000000133 /* AppDelegate.swift */,
+				1A0000010000000000000134 /* AppWindowPresenter.swift */,
+				1A0000010000000000000116 /* TomatoTimeriOSApp.swift */,
+				1A0000010000000000000102 /* ContentView.swift */,
+				1A0000010000000000000122 /* AdaptiveLayoutMetrics.swift */,
+				1A000001000000000000011E /* TimerColumnView.swift */,
+				1A000001000000000000013B /* TimerHeaderView.swift */,
+				1A0000010000000000000143 /* TimerDurationEditorView.swift */,
+				1A0000010000000000000140 /* PresetPickerView.swift */,
+				1A0000010000000000000141 /* DurationSteppersView.swift */,
+				1A000001000000000000013E /* DurationStepperView.swift */,
+				1A000001000000000000013F /* CompactDurationStepperView.swift */,
+				1A000001000000000000013D /* StepperIconButton.swift */,
+				1A000001000000000000013C /* DurationUnitFormatter.swift */,
+				1A0000010000000000000142 /* TimerVoicePicker.swift */,
+				1A0000010000000000000145 /* CountdownAdjustmentsView.swift */,
+				1A0000010000000000000144 /* TimerAdjustmentButton.swift */,
+				1A0000010000000000000147 /* TimerActionsView.swift */,
+				1A0000010000000000000146 /* TimerActionButton.swift */,
+				1A000001000000000000011C /* TimerFaceView.swift */,
+				1A0000010000000000000123 /* TimerFaceFrame.swift */,
+				1A0000010000000000000124 /* TimerProgressRing.swift */,
+				1A0000010000000000000125 /* TimerFaceLabels.swift */,
+				1A0000010000000000000126 /* FloatingLight.swift */,
+				1A0000010000000000000127 /* FloatingLightsView.swift */,
+				1A0000010000000000000148 /* AvatarSectionView.swift */,
+				1A000001000000000000011D /* DigitalAvatarView.swift */,
+				1A0000010000000000000128 /* DigitalAvatarPresentation.swift */,
+				1A0000010000000000000129 /* DigitalAvatarFrame.swift */,
+				1A000001000000000000012A /* DigitalAvatarImage.swift */,
+				1A0000010000000000000149 /* DigitalAvatarFaceView.swift */,
+				1A000001000000000000014A /* DigitalAvatarGlowView.swift */,
+				1A000001000000000000012B /* PlatformAvatarImageView.swift */,
+				1A000001000000000000012E /* VoiceGender.swift */,
+				1A000001000000000000012C /* VoiceGender+Avatar.swift */,
+				1A000001000000000000012F /* VoiceGenderDidChangeNotification.swift */,
+				1A000001000000000000012D /* AvatarImageLoader.swift */,
+				1A0000010000000000000121 /* AvatarSpeechController.swift */,
+				1A0000010000000000000130 /* SpeechNotifying.swift */,
+				1A0000010000000000000103 /* PomodoroTimerViewModel.swift */,
+				1A0000010000000000000131 /* PomodoroTimerState.swift */,
+				1A0000010000000000000132 /* TimerSnapshot.swift */,
+				1A0000010000000000000104 /* DisplaySleepAssertion.swift */,
+				1A0000010000000000000105 /* SpeechNotifier.swift */,
+				1A0000010000000000000106 /* ScreenSleeper.swift */,
+				1A0000010000000000000135 /* ScreenSleepOutcome.swift */,
+				1A0000010000000000000136 /* ScreenSleepRequest.swift */,
+				1A0000010000000000000137 /* ScreenSleepControlling.swift */,
+				1A0000010000000000000138 /* SystemScreenSleeper.swift */,
+				1A0000010000000000000139 /* ProcessScreenSleepRequest.swift */,
+				1A000001000000000000013A /* CompletedScreenSleepRequest.swift */,
+				1A0000010000000000000120 /* TimerNotificationScheduler.swift */,
+				1A0000010000000000000115 /* AppActivityMonitor.swift */,
+				1A0000010000000000000113 /* Audio */,
+				1A0000010000000000000114 /* Avatars */,
+				1A0000010000000000000107 /* Assets.xcassets */,
+				1A000001000000000000011F /* PrivacyInfo.xcprivacy */,
+				1A0000010000000000000111 /* Info.plist */,
+				1A0000010000000000000112 /* TomatoTimer.entitlements */,
+				1A0000010000000000000304 /* Preview Content */,
+			);
+			path = TomatoTimer;
+			sourceTree = "<group>";
+		};
+		1A0000010000000000000302 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A0000010000000000000109 /* AVFoundation.framework */,
+				1A0000010000000000000110 /* IOKit.framework */,
+				B8CE6E0ED127939E5DCF2E19 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A0000010000000000000303 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A0000010000000000000100 /* TomatoTimer.app */,
+				1A0000010000000000000117 /* TomatoTimer.app */,
+				1A0000010000000000000119 /* TomatoTimerTests.xctest */,
+				1A000001000000000000011A /* TomatoTimer-iOSTests.xctest */,
+				1D23DE2935F4B5F6A2C924CA /* TomatoTimerWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A0000010000000000000304 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A0000010000000000000108 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A0000010000000000000305 /* TomatoTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A0000010000000000000118 /* PomodoroTimerViewModelTests.swift */,
+				1A000001000000000000011B /* AudioResourceTests.swift */,
+			);
+			path = TomatoTimerTests;
+			sourceTree = "<group>";
+		};
+		65F5CD61E06BA338EBED017E /* TomatoTimerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4A33466B55D29D0ABD3C2DF3 /* TomatoTimerWidgetBundle.swift */,
+				40552B10D32C8EA7A83B3A1A /* PomodoroLiveActivity.swift */,
+				DFA6A2E7A23CAC6EB5465C7F /* Info.plist */,
+			);
+			name = TomatoTimerWidget;
+			path = TomatoTimerWidget;
+			sourceTree = "<group>";
+		};
+		B8CE6E0ED127939E5DCF2E19 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				430E007C8079475089606824 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A0000010000000000000400 /* TomatoTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A0000010000000000000501 /* Build configuration list for PBXNativeTarget "TomatoTimer" */;
+			buildPhases = (
+				1A0000010000000000000201 /* Sources */,
+				1A0000010000000000000200 /* Frameworks */,
+				1A0000010000000000000202 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TomatoTimer;
+			productName = TomatoTimer;
+			productReference = 1A0000010000000000000100 /* TomatoTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A0000010000000000000402 /* TomatoTimer-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A0000010000000000000502 /* Build configuration list for PBXNativeTarget "TomatoTimer-iOS" */;
+			buildPhases = (
+				1A0000010000000000000204 /* Sources */,
+				1A0000010000000000000203 /* Frameworks */,
+				1A0000010000000000000205 /* Resources */,
+				F368A99417F3682ADD8F26CC /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7D45A474698CCD5755ABB77 /* PBXTargetDependency */,
+			);
+			name = "TomatoTimer-iOS";
+			productName = TomatoTimer;
+			productReference = 1A0000010000000000000117 /* TomatoTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A0000010000000000000403 /* TomatoTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A0000010000000000000503 /* Build configuration list for PBXNativeTarget "TomatoTimerTests" */;
+			buildPhases = (
+				1A0000010000000000000207 /* Sources */,
+				1A0000010000000000000206 /* Frameworks */,
+				1A0000010000000000000208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A0000010000000000000701 /* PBXTargetDependency */,
+			);
+			name = TomatoTimerTests;
+			productName = TomatoTimerTests;
+			productReference = 1A0000010000000000000119 /* TomatoTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A0000010000000000000404 /* TomatoTimer-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A0000010000000000000504 /* Build configuration list for PBXNativeTarget "TomatoTimer-iOSTests" */;
+			buildPhases = (
+				1A000001000000000000020B /* Sources */,
+				1A0000010000000000000209 /* Frameworks */,
+				1A000001000000000000020A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A0000010000000000000703 /* PBXTargetDependency */,
+			);
+			name = "TomatoTimer-iOSTests";
+			productName = "TomatoTimer-iOSTests";
+			productReference = 1A000001000000000000011A /* TomatoTimer-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		83D30ECCCBA6ED4B6268454E /* TomatoTimerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDDA52D661A2CC8DCAD478D7 /* Build configuration list for PBXNativeTarget "TomatoTimerWidgetExtension" */;
+			buildPhases = (
+				2F51DE9C69414DFAEFEFB597 /* Sources */,
+				168876CE07077D84C92C9067 /* Frameworks */,
+				99974106169E35CECB761484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TomatoTimerWidgetExtension;
+			productName = TomatoTimerWidgetExtension;
+			productReference = 1D23DE2935F4B5F6A2C924CA /* TomatoTimerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A0000010000000000000401 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					1A0000010000000000000400 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					1A0000010000000000000402 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					1A0000010000000000000403 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 1A0000010000000000000400;
+					};
+					1A0000010000000000000404 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 1A0000010000000000000402;
+					};
+				};
+			};
+			buildConfigurationList = 1A0000010000000000000500 /* Build configuration list for PBXProject "TomatoTimer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A0000010000000000000300;
+			productRefGroup = 1A0000010000000000000303 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A0000010000000000000400 /* TomatoTimer */,
+				1A0000010000000000000402 /* TomatoTimer-iOS */,
+				1A0000010000000000000403 /* TomatoTimerTests */,
+				1A0000010000000000000404 /* TomatoTimer-iOSTests */,
+				83D30ECCCBA6ED4B6268454E /* TomatoTimerWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A0000010000000000000202 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0000010000000000000011 /* Audio in Resources */,
+				1A0000010000000000000012 /* Avatars in Resources */,
+				1A0000010000000000000007 /* Assets.xcassets in Resources */,
+				1A0000010000000000000029 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A000001000000000000001C /* Audio in Resources */,
+				1A000001000000000000001D /* Avatars in Resources */,
+				1A000001000000000000001B /* Assets.xcassets in Resources */,
+				1A000001000000000000002A /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A000001000000000000020A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99974106169E35CECB761484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A0000010000000000000201 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0000010000000000000001 /* TomatoTimerApp.swift in Sources */,
+				1A0000010000000000000051 /* AppDelegate.swift in Sources */,
+				1A0000010000000000000052 /* AppWindowPresenter.swift in Sources */,
+				1A0000010000000000000002 /* ContentView.swift in Sources */,
+				1A000001000000000000002F /* AdaptiveLayoutMetrics.swift in Sources */,
+				1A0000010000000000000027 /* TimerColumnView.swift in Sources */,
+				1A000001000000000000005F /* TimerHeaderView.swift in Sources */,
+				1A000001000000000000006F /* TimerDurationEditorView.swift in Sources */,
+				1A0000010000000000000069 /* PresetPickerView.swift in Sources */,
+				1A000001000000000000006B /* DurationSteppersView.swift in Sources */,
+				1A0000010000000000000065 /* DurationStepperView.swift in Sources */,
+				1A0000010000000000000067 /* CompactDurationStepperView.swift in Sources */,
+				1A0000010000000000000063 /* StepperIconButton.swift in Sources */,
+				1A0000010000000000000061 /* DurationUnitFormatter.swift in Sources */,
+				1A000001000000000000006D /* TimerVoicePicker.swift in Sources */,
+				1A0000010000000000000073 /* CountdownAdjustmentsView.swift in Sources */,
+				1A0000010000000000000071 /* TimerAdjustmentButton.swift in Sources */,
+				1A0000010000000000000077 /* TimerActionsView.swift in Sources */,
+				1A0000010000000000000075 /* TimerActionButton.swift in Sources */,
+				1A0000010000000000000023 /* TimerFaceView.swift in Sources */,
+				1A0000010000000000000031 /* TimerFaceFrame.swift in Sources */,
+				1A0000010000000000000033 /* TimerProgressRing.swift in Sources */,
+				1A0000010000000000000035 /* TimerFaceLabels.swift in Sources */,
+				1A0000010000000000000037 /* FloatingLight.swift in Sources */,
+				1A0000010000000000000039 /* FloatingLightsView.swift in Sources */,
+				1A0000010000000000000079 /* AvatarSectionView.swift in Sources */,
+				1A0000010000000000000025 /* DigitalAvatarView.swift in Sources */,
+				1A000001000000000000003B /* DigitalAvatarPresentation.swift in Sources */,
+				1A000001000000000000003D /* DigitalAvatarFrame.swift in Sources */,
+				1A000001000000000000003F /* DigitalAvatarImage.swift in Sources */,
+				1A000001000000000000007B /* DigitalAvatarFaceView.swift in Sources */,
+				1A000001000000000000007D /* DigitalAvatarGlowView.swift in Sources */,
+				1A0000010000000000000041 /* PlatformAvatarImageView.swift in Sources */,
+				1A0000010000000000000047 /* VoiceGender.swift in Sources */,
+				1A0000010000000000000043 /* VoiceGender+Avatar.swift in Sources */,
+				1A0000010000000000000049 /* VoiceGenderDidChangeNotification.swift in Sources */,
+				1A0000010000000000000045 /* AvatarImageLoader.swift in Sources */,
+				1A000001000000000000002D /* AvatarSpeechController.swift in Sources */,
+				1A000001000000000000004B /* SpeechNotifying.swift in Sources */,
+				1A0000010000000000000003 /* PomodoroTimerViewModel.swift in Sources */,
+				1A000001000000000000004D /* PomodoroTimerState.swift in Sources */,
+				1A000001000000000000004F /* TimerSnapshot.swift in Sources */,
+				1A0000010000000000000004 /* DisplaySleepAssertion.swift in Sources */,
+				1A0000010000000000000005 /* SpeechNotifier.swift in Sources */,
+				1A0000010000000000000006 /* ScreenSleeper.swift in Sources */,
+				1A0000010000000000000053 /* ScreenSleepOutcome.swift in Sources */,
+				1A0000010000000000000055 /* ScreenSleepRequest.swift in Sources */,
+				1A0000010000000000000057 /* ScreenSleepControlling.swift in Sources */,
+				1A0000010000000000000059 /* SystemScreenSleeper.swift in Sources */,
+				1A000001000000000000005B /* ProcessScreenSleepRequest.swift in Sources */,
+				1A000001000000000000005D /* CompletedScreenSleepRequest.swift in Sources */,
+				1A000001000000000000002B /* TimerNotificationScheduler.swift in Sources */,
+				1A0000010000000000000013 /* AppActivityMonitor.swift in Sources */,
+				DE94889E9E0F7453D0B08AA5 /* TimerPalette.swift in Sources */,
+				97427A1A206C8B77426A3613 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000204 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0000010000000000000014 /* TomatoTimeriOSApp.swift in Sources */,
+				1A0000010000000000000015 /* ContentView.swift in Sources */,
+				1A0000010000000000000030 /* AdaptiveLayoutMetrics.swift in Sources */,
+				1A0000010000000000000028 /* TimerColumnView.swift in Sources */,
+				1A0000010000000000000060 /* TimerHeaderView.swift in Sources */,
+				1A0000010000000000000070 /* TimerDurationEditorView.swift in Sources */,
+				1A000001000000000000006A /* PresetPickerView.swift in Sources */,
+				1A000001000000000000006C /* DurationSteppersView.swift in Sources */,
+				1A0000010000000000000066 /* DurationStepperView.swift in Sources */,
+				1A0000010000000000000068 /* CompactDurationStepperView.swift in Sources */,
+				1A0000010000000000000064 /* StepperIconButton.swift in Sources */,
+				1A0000010000000000000062 /* DurationUnitFormatter.swift in Sources */,
+				1A000001000000000000006E /* TimerVoicePicker.swift in Sources */,
+				1A0000010000000000000074 /* CountdownAdjustmentsView.swift in Sources */,
+				1A0000010000000000000072 /* TimerAdjustmentButton.swift in Sources */,
+				1A0000010000000000000078 /* TimerActionsView.swift in Sources */,
+				1A0000010000000000000076 /* TimerActionButton.swift in Sources */,
+				1A0000010000000000000024 /* TimerFaceView.swift in Sources */,
+				1A0000010000000000000032 /* TimerFaceFrame.swift in Sources */,
+				1A0000010000000000000034 /* TimerProgressRing.swift in Sources */,
+				1A0000010000000000000036 /* TimerFaceLabels.swift in Sources */,
+				1A0000010000000000000038 /* FloatingLight.swift in Sources */,
+				1A000001000000000000003A /* FloatingLightsView.swift in Sources */,
+				1A000001000000000000007A /* AvatarSectionView.swift in Sources */,
+				1A0000010000000000000026 /* DigitalAvatarView.swift in Sources */,
+				1A000001000000000000003C /* DigitalAvatarPresentation.swift in Sources */,
+				1A000001000000000000003E /* DigitalAvatarFrame.swift in Sources */,
+				1A0000010000000000000040 /* DigitalAvatarImage.swift in Sources */,
+				1A000001000000000000007C /* DigitalAvatarFaceView.swift in Sources */,
+				1A000001000000000000007E /* DigitalAvatarGlowView.swift in Sources */,
+				1A0000010000000000000042 /* PlatformAvatarImageView.swift in Sources */,
+				1A0000010000000000000048 /* VoiceGender.swift in Sources */,
+				1A0000010000000000000044 /* VoiceGender+Avatar.swift in Sources */,
+				1A000001000000000000004A /* VoiceGenderDidChangeNotification.swift in Sources */,
+				1A0000010000000000000046 /* AvatarImageLoader.swift in Sources */,
+				1A000001000000000000002E /* AvatarSpeechController.swift in Sources */,
+				1A000001000000000000004C /* SpeechNotifying.swift in Sources */,
+				1A0000010000000000000016 /* PomodoroTimerViewModel.swift in Sources */,
+				1A000001000000000000004E /* PomodoroTimerState.swift in Sources */,
+				1A0000010000000000000050 /* TimerSnapshot.swift in Sources */,
+				1A0000010000000000000017 /* DisplaySleepAssertion.swift in Sources */,
+				1A0000010000000000000018 /* SpeechNotifier.swift in Sources */,
+				1A0000010000000000000019 /* ScreenSleeper.swift in Sources */,
+				1A0000010000000000000054 /* ScreenSleepOutcome.swift in Sources */,
+				1A0000010000000000000056 /* ScreenSleepRequest.swift in Sources */,
+				1A0000010000000000000058 /* ScreenSleepControlling.swift in Sources */,
+				1A000001000000000000005A /* SystemScreenSleeper.swift in Sources */,
+				1A000001000000000000005C /* ProcessScreenSleepRequest.swift in Sources */,
+				1A000001000000000000005E /* CompletedScreenSleepRequest.swift in Sources */,
+				1A000001000000000000002C /* TimerNotificationScheduler.swift in Sources */,
+				1A000001000000000000001A /* AppActivityMonitor.swift in Sources */,
+				4A331609BC1500F72B51332B /* PomodoroActivityAttributes.swift in Sources */,
+				88D3374AEDEB8F8035AB3B93 /* LiveActivityController.swift in Sources */,
+				C28E82CF611196FF8D3CE7EA /* TimerPalette.swift in Sources */,
+				6D35FAD13C0C92004ABC76BE /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0000010000000000000207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A000001000000000000001F /* PomodoroTimerViewModelTests.swift in Sources */,
+				1A0000010000000000000021 /* AudioResourceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A000001000000000000020B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0000010000000000000020 /* PomodoroTimerViewModelTests.swift in Sources */,
+				1A0000010000000000000022 /* AudioResourceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F51DE9C69414DFAEFEFB597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12531ABE04EDA4CEB6FA33BD /* PomodoroActivityAttributes.swift in Sources */,
+				14D7AC091C33B5F0E073095D /* TomatoTimerWidgetBundle.swift in Sources */,
+				48B677B1F3F3AD2EB9972771 /* PomodoroLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A0000010000000000000701 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A0000010000000000000400 /* TomatoTimer */;
+			targetProxy = 1A0000010000000000000700 /* PBXContainerItemProxy */;
+		};
+		1A0000010000000000000703 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A0000010000000000000402 /* TomatoTimer-iOS */;
+			targetProxy = 1A0000010000000000000702 /* PBXContainerItemProxy */;
+		};
+		F7D45A474698CCD5755ABB77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TomatoTimerWidgetExtension;
+			target = 83D30ECCCBA6ED4B6268454E /* TomatoTimerWidgetExtension */;
+			targetProxy = E56A83895B051EECC8262848 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A0000010000000000000600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Debug;
+		};
+		1A0000010000000000000601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Release;
+		};
+		1A0000010000000000000602 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TomatoTimer/TomatoTimer.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TomatoTimer/Preview Content\"";
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TomatoTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		1A0000010000000000000603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TomatoTimer/TomatoTimer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TomatoTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = W882AG982U;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TomatoTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		1A0000010000000000000604 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TomatoTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = W882AG982U;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "番茄钟";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Kai. All rights reserved.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer.ios;
+				PRODUCT_NAME = TomatoTimer;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A0000010000000000000605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W882AG982U;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "番茄钟";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Kai. All rights reserved.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer.ios;
+				PRODUCT_NAME = TomatoTimer;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A0000010000000000000606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TomatoTimer.app/Contents/MacOS/TomatoTimer";
+			};
+			name = Debug;
+		};
+		1A0000010000000000000607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TomatoTimer.app/Contents/MacOS/TomatoTimer";
+			};
+			name = Release;
+		};
+		1A0000010000000000000608 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W882AG982U;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer.iosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TomatoTimer.app/TomatoTimer";
+			};
+			name = Debug;
+		};
+		1A0000010000000000000609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W882AG982U;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer.iosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TomatoTimer.app/TomatoTimer";
+			};
+			name = Release;
+		};
+		83A2767764B194C5E9B40ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W882AG982U;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TomatoTimerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "番茄钟";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer.ios.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F319E338D3B21E6C4C9A9107 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W882AG982U;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TomatoTimerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "番茄钟";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.TomatoTimer.ios.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A0000010000000000000500 /* Build configuration list for PBXProject "TomatoTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A0000010000000000000600 /* Debug */,
+				1A0000010000000000000601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A0000010000000000000501 /* Build configuration list for PBXNativeTarget "TomatoTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A0000010000000000000602 /* Debug */,
+				1A0000010000000000000603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A0000010000000000000502 /* Build configuration list for PBXNativeTarget "TomatoTimer-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A0000010000000000000604 /* Debug */,
+				1A0000010000000000000605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A0000010000000000000503 /* Build configuration list for PBXNativeTarget "TomatoTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A0000010000000000000606 /* Debug */,
+				1A0000010000000000000607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A0000010000000000000504 /* Build configuration list for PBXNativeTarget "TomatoTimer-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A0000010000000000000608 /* Debug */,
+				1A0000010000000000000609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDDA52D661A2CC8DCAD478D7 /* Build configuration list for PBXNativeTarget "TomatoTimerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83A2767764B194C5E9B40ED7 /* Release */,
+				F319E338D3B21E6C4C9A9107 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A0000010000000000000401 /* Project object */;
+}

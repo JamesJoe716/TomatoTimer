@@ -88,6 +88,8 @@
 		1A0000010000000000000907 /* TimerClockFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000908 /* TimerClockFormatter.swift */; };
 		1A0000010000000000000909 /* TimerSnapshot+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090B /* TimerSnapshot+Presentation.swift */; };
 		1A000001000000000000090A /* TimerSnapshot+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090B /* TimerSnapshot+Presentation.swift */; };
+		1A000001000000000000090C /* TimerPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090E /* TimerPreferences.swift */; };
+		1A000001000000000000090D /* TimerPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000001000000000000090E /* TimerPreferences.swift */; };
 		1A000001000000000000004F /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
 		1A0000010000000000000050 /* TimerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000132 /* TimerSnapshot.swift */; };
 		1A0000010000000000000051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000010000000000000133 /* AppDelegate.swift */; };
@@ -234,6 +236,7 @@
 		1A0000010000000000000905 /* LiveActivitySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivitySnapshot.swift; sourceTree = "<group>"; };
 		1A0000010000000000000908 /* TimerClockFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerClockFormatter.swift; sourceTree = "<group>"; };
 		1A000001000000000000090B /* TimerSnapshot+Presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerSnapshot+Presentation.swift"; sourceTree = "<group>"; };
+		1A000001000000000000090E /* TimerPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPreferences.swift; sourceTree = "<group>"; };
 		1A0000010000000000000132 /* TimerSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSnapshot.swift; sourceTree = "<group>"; };
 		1A0000010000000000000133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A0000010000000000000134 /* AppWindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowPresenter.swift; sourceTree = "<group>"; };
@@ -377,6 +380,7 @@
 				1A0000010000000000000905 /* LiveActivitySnapshot.swift */,
 				1A0000010000000000000908 /* TimerClockFormatter.swift */,
 				1A000001000000000000090B /* TimerSnapshot+Presentation.swift */,
+				1A000001000000000000090E /* TimerPreferences.swift */,
 				1A0000010000000000000132 /* TimerSnapshot.swift */,
 				1A0000010000000000000104 /* DisplaySleepAssertion.swift */,
 				1A0000010000000000000105 /* SpeechNotifier.swift */,
@@ -649,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A000001000000000000090C /* TimerPreferences.swift in Sources */,
 				1A0000010000000000000909 /* TimerSnapshot+Presentation.swift in Sources */,
 				1A0000010000000000000906 /* TimerClockFormatter.swift in Sources */,
 				1A0000010000000000000903 /* LiveActivitySnapshot.swift in Sources */,
@@ -715,6 +720,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A000001000000000000090D /* TimerPreferences.swift in Sources */,
 				1A000001000000000000090A /* TimerSnapshot+Presentation.swift in Sources */,
 				1A0000010000000000000907 /* TimerClockFormatter.swift in Sources */,
 				1A0000010000000000000904 /* LiveActivitySnapshot.swift in Sources */,

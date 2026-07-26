@@ -53,7 +53,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         "继续保持,小钱钱正在向你飞来呀"
     ]
     private let notificationCenter: NotificationCenter
-    private let defaults: UserDefaults
+    private let preferences: TimerPreferences
 
     init(
         notificationCenter: NotificationCenter = .default,
@@ -66,7 +66,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         onFocusSessionCompleted: (@MainActor @Sendable (Int) -> Void)? = nil
     ) {
         self.notificationCenter = notificationCenter
-        self.defaults = userDefaults
+        self.preferences = TimerPreferences(defaults: userDefaults)
         self.speechNotifier = speechNotifier
         self.sleepAssertion = sleepAssertion
         self.screenSleeper = screenSleeper
@@ -99,12 +99,12 @@ final class PomodoroTimerViewModel: ObservableObject {
 
         // Restore the last duration the user picked, so the app doesn't reset to
         // 25:00 on every launch.
-        if let saved = savedSelectedDuration() {
+        if let saved = preferences.selectedDuration {
             applySelectedDuration(totalSeconds: saved, selectedPresetMinutes: nil, to: &snapshot)
         }
 
         // Restore the configured break length and reflect it in the idle snapshot.
-        breakTotalSeconds = savedBreakDuration()
+        breakTotalSeconds = preferences.breakDuration
         snapshot.breakTotalSeconds = breakTotalSeconds
         snapshot.breakRemainingSeconds = breakTotalSeconds
 
@@ -112,8 +112,6 @@ final class PomodoroTimerViewModel: ObservableObject {
         // reality (and any pending notifications) instead of showing idle.
         applyRestorationIfNeeded()
     }
-
-    private static let restorationStateKey = "timerRestorationState.v1"
 
     private func saveRestorationState() {
         let stateID: String?
@@ -125,11 +123,11 @@ final class PomodoroTimerViewModel: ObservableObject {
         }
 
         guard let stateID else {
-            defaults.removeObject(forKey: Self.restorationStateKey)
+            preferences.restorationState = nil
             return
         }
 
-        let record = TimerRestorationState(
+        preferences.restorationState = TimerRestorationState(
             stateID: stateID,
             endDate: endDate,
             breakEndDate: breakEndDate,
@@ -137,19 +135,12 @@ final class PomodoroTimerViewModel: ObservableObject {
             sessionTotalSeconds: snapshot.sessionTotalSeconds,
             breakTotalSeconds: snapshot.breakTotalSeconds
         )
-        if let data = try? JSONEncoder().encode(record) {
-            defaults.set(data, forKey: Self.restorationStateKey)
-        }
     }
 
     private func applyRestorationIfNeeded() {
-        let record = (defaults.data(forKey: Self.restorationStateKey)).flatMap {
-            try? JSONDecoder().decode(TimerRestorationState.self, from: $0)
-        }
-
-        switch TimerRestorationOutcome.resolve(record, now: Date.now) {
+        switch TimerRestorationOutcome.resolve(preferences.restorationState, now: Date.now) {
         case .none:
-            defaults.removeObject(forKey: Self.restorationStateKey)
+            preferences.restorationState = nil
         case let .running(endDate, sessionTotalSeconds):
             self.endDate = endDate
             snapshot.state = .running
@@ -651,7 +642,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         // Capture the message for the break that just ended, before the snapshot is
         // reset to the normal break length.
         let finishedMessage = breakFinishedMessage
-        let willAutoStart = announcesCompletion && autoStartNextFocusEnabled
+        let willAutoStart = announcesCompletion && preferences.autoStartNextFocus
 
         let selectedTotal = TimeInterval(snapshot.selectedTotalSeconds)
         publish {
@@ -693,9 +684,11 @@ final class PomodoroTimerViewModel: ObservableObject {
 
         // Every N completed focus sessions use a longer break (opt-in; interval 0 =
         // always the normal break).
-        completedFocusCount += 1
-        let isLongBreak = longBreakInterval > 0 && completedFocusCount.isMultiple(of: longBreakInterval)
-        let effectiveBreakSeconds = isLongBreak ? longBreakSeconds : breakTotalSeconds
+        preferences.completedFocusCount += 1
+        let longBreakInterval = preferences.longBreakInterval
+        let isLongBreak = longBreakInterval > 0
+            && preferences.completedFocusCount.isMultiple(of: longBreakInterval)
+        let effectiveBreakSeconds = isLongBreak ? preferences.longBreakSeconds : breakTotalSeconds
 
         let breakEndsAt = workEndedAt.addingTimeInterval(effectiveBreakSeconds)
         let breakRemaining = max(0, breakEndsAt.timeIntervalSinceNow)
@@ -830,7 +823,7 @@ final class PomodoroTimerViewModel: ObservableObject {
         guard canEditDuration else { return }
         let clamped = min(60, max(1, minutes))
         breakTotalSeconds = TimeInterval(clamped * 60)
-        defaults.set(clamped * 60, forKey: Self.breakDurationDefaultsKey)
+        preferences.breakDuration = breakTotalSeconds
         publish {
             $0.breakTotalSeconds = breakTotalSeconds
             $0.breakRemainingSeconds = breakTotalSeconds
@@ -839,56 +832,12 @@ final class PomodoroTimerViewModel: ObservableObject {
 
     private var breakFinishedMessage: String { currentSnapshot.breakFinishedMessage }
 
-    // MARK: - Cycle & auto-start (opt-in; all default to the original behavior)
-
-    static let autoStartDefaultsKey = "autoStartNextFocus"
-    static let longBreakIntervalDefaultsKey = "longBreakInterval"
-    static let longBreakMinutesDefaultsKey = "longBreakMinutes"
-    private static let completedFocusCountKey = "completedFocusCount"
-
-    private var autoStartNextFocusEnabled: Bool {
-        defaults.bool(forKey: Self.autoStartDefaultsKey)
-    }
-
-    /// 0 = long breaks disabled.
-    private var longBreakInterval: Int {
-        max(0, defaults.integer(forKey: Self.longBreakIntervalDefaultsKey))
-    }
-
-    private var longBreakSeconds: TimeInterval {
-        let stored = defaults.integer(forKey: Self.longBreakMinutesDefaultsKey)
-        let minutes = stored > 0 ? min(60, stored) : 15
-        return TimeInterval(minutes * 60)
-    }
-
-    private var completedFocusCount: Int {
-        get { defaults.integer(forKey: Self.completedFocusCountKey) }
-        set { defaults.set(newValue, forKey: Self.completedFocusCountKey) }
-    }
-
-    private static let breakDurationDefaultsKey = "breakTotalSeconds"
-
-    private func savedBreakDuration() -> TimeInterval {
-        guard defaults.object(forKey: Self.breakDurationDefaultsKey) != nil else { return 5 * 60 }
-        let value = defaults.integer(forKey: Self.breakDurationDefaultsKey)
-        let clamped = min(60 * 60, max(60, value))
-        return TimeInterval(clamped)
-    }
-
-    private static let selectedDurationDefaultsKey = "selectedTotalSeconds"
-
-    private func savedSelectedDuration() -> Int? {
-        guard defaults.object(forKey: Self.selectedDurationDefaultsKey) != nil else { return nil }
-        let value = defaults.integer(forKey: Self.selectedDurationDefaultsKey)
-        return value > 0 ? value : nil
-    }
-
     private func enqueueSelectedDuration(totalSeconds: Int, selectedPresetMinutes explicitPreset: Int? = nil) {
         var next = currentSnapshot
         applySelectedDuration(totalSeconds: totalSeconds, selectedPresetMinutes: explicitPreset, to: &next)
         guard next != currentSnapshot else { return }
 
-        defaults.set(next.selectedTotalSeconds, forKey: Self.selectedDurationDefaultsKey)
+        preferences.selectedDuration = next.selectedTotalSeconds
         pendingSnapshot = next
         enqueuePendingSnapshotPublish()
     }

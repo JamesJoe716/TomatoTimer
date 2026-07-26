@@ -3,9 +3,9 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var timer: PomodoroTimerViewModel
     @AppStorage(SpeechNotifier.mutedDefaultsKey) private var isMuted = false
-    @AppStorage(PomodoroTimerViewModel.autoStartDefaultsKey) private var autoStartNextFocus = false
-    @AppStorage(PomodoroTimerViewModel.longBreakIntervalDefaultsKey) private var longBreakInterval = 0
-    @AppStorage(PomodoroTimerViewModel.longBreakMinutesDefaultsKey) private var longBreakMinutes = 15
+    @AppStorage(TimerPreferences.autoStartKey) private var autoStartNextFocus = false
+    @AppStorage(TimerPreferences.longBreakIntervalKey) private var longBreakInterval = 0
+    @AppStorage(TimerPreferences.longBreakMinutesKey) private var longBreakMinutes = 15
 
     var body: some View {
         Form {

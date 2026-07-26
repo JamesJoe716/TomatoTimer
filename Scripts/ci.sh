@@ -14,6 +14,22 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 PROJECT="TomatoTimer.xcodeproj"
 XCB_FLAGS=(-project "$PROJECT" -quiet)
 
+# Hosted CI runners have no "Mac Development" certificate for the project's team,
+# so a normal signed build fails with exit 65. Ad-hoc sign there instead: it needs
+# no secrets, and unlike CODE_SIGNING_ALLOWED=NO it still produces a binary that
+# will actually launch on Apple Silicon — which the test stage needs.
+#
+# Only applied when CI is set, so local builds keep their real signing identity.
+if [[ -n "${CI:-}" ]]; then
+    XCB_FLAGS+=(
+        CODE_SIGN_IDENTITY="-"
+        CODE_SIGN_STYLE=Manual
+        DEVELOPMENT_TEAM=""
+        PROVISIONING_PROFILE_SPECIFIER=""
+        CODE_SIGNING_REQUIRED=NO
+    )
+fi
+
 # xcodebuild writes into the repo by default; keep it out of the source tree so
 # .gitignore stays simple and the widget/app builds share one cache.
 DERIVED_DATA="${DERIVED_DATA:-build/DerivedData}"
